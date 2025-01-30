@@ -22,11 +22,18 @@ namespace CURA_HealthCare.Pages
 
         IWebElement btn => driver.FindElement(By.XPath("//button[text()='Login']"));
 
+        IWebElement errormsg => driver.FindElement(By.ClassName("text-danger"));
+
         public void Login(string Username, string Password)
         {
             user.SendKeys(Username);
             pass.SendKeys(Password);
             btn.Click();
+           
         }
+
+        public string msg() => errormsg.Text;
+
+        
     }
 }

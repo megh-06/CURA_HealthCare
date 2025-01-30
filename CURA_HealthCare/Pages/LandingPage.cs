@@ -18,6 +18,6 @@ namespace CURA_HealthCare.Pages
         
         IWebElement appointment => driver.FindElement(By.Id("btn-make-appointment"));
 
-        public void appointbtn() => appointment.Click();
+        public void Clickappointbtn() => appointment.Click();
     }
 }

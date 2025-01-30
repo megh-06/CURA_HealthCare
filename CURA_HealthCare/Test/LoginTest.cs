@@ -16,11 +16,13 @@ namespace CURA_HealthCare.Test
         }
 
         [Test]
-        [TestCase("XYZ", "ABC")]      //One of the Data Driven Approach
-        public void test(string name,string pass)
+        [TestCase("XYZ", "ABC", "Login failed! Please ensure the username and password are valid.")]      //One of the Data Driven Approach
+        public void test(string name,string pass, string expected)
         {
-            landingpage.appointbtn();
-            loginpage.Login(name, pass);
+            landingpage.Clickappointbtn();
+            loginpage.Login(name, pass);         
+            Assert.AreEqual(expected, loginpage.msg(), "The text does not match!");
         }
+        
     }
 }
